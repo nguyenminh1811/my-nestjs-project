@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npm run pre-commit
+
+# Get the list of app folders with changes and run npm run build on it
+app_folders=""
+git diff --cached --name-only | grep "^apps/" | cut -d/ -f2 | while read -r folder; do
+  if ! echo "$app_folders" | grep -q "\<$folder\>"; then
+    app_folders="$app_folders$folder "
+    npm run build "$folder"
+  fi
+done

@@ -1,0 +1,40 @@
+# ignore .git and .cache folders
+.git
+.cache
+
+# Files generated during development
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# NestJS build output
+/dist/
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# Test and coverage reports
+/coverage/
+/.nyc_output/
+/.sonar/
+
+# Environment-specific files
+.env
+.env.*
+.*.env
+.env.local
+
+# Miscellaneous
+.DS_Store
+Thumbs.db
+
+# Markdown files
+*.md
+
+# Deployment helpers
+copilot/
+conf/
+scripts/
+docker-compose*
+.gitlab-ci.yml
